@@ -38,6 +38,10 @@ public class gameover : MonoBehaviour
 
     void Changescene()
     {
+        if (righteffect.score > PlayerPrefs.GetInt("high", 0))
+        {
+            PlayerPrefs.SetInt("high", righteffect.score);
+        }
         SceneManager.LoadScene("GameOver");
         collisioneffect.playerhealth = 3;
         righteffect.score = 0;

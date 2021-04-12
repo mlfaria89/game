@@ -8,10 +8,10 @@ public class menustart : MonoBehaviour
 {
     public void startgame()
     {
-        if (PlayerPrefs.GetInt("lives", 2) > 0)
-        {
+        
+        
             SceneManager.LoadScene("Game");
-        }
+        
     }
 
     public void goselectlevel()

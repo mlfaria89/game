@@ -26,36 +26,32 @@ public class playercontrol : MonoBehaviour
         {
             moveinput.x = 0;
         }
-        //if (Input.touchCount > 0)
-        //{
-        //var position = Input.GetTouch(0).position;
-        //if (position.x < 0)
-        //{
-        //   moveinput.x = -1;
-        //}
-        //else
-        //{
-        //  moveinput.x = 1;
-        //}
-        //}
+       
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetButtonDown("Horizontal") && Input.GetAxisRaw("Horizontal") > 0)
         {
             ismoving = true;
-            Vector3 pos = Input.mousePosition;
+            
             //position in line
-            float line = Camera.main.ScreenToWorldPoint(Input.mousePosition).x;
-            if (line < 0)
-            {
-                moveinput.x = -1;
-            }
-            else
-            {
+            
+            
                 moveinput.x = 1;
-            }
+            
         }
 
-        if (Input.GetMouseButtonUp(0))
+
+        if (Input.GetButtonDown("Horizontal") && Input.GetAxisRaw("Horizontal") < 0)
+        {
+            ismoving = true;
+
+            //position in line
+
+
+            moveinput.x = -1;
+
+        }
+
+        if (Input.GetButtonUp("Horizontal"))
         {
             ismoving = false;
         }
@@ -64,12 +60,12 @@ public class playercontrol : MonoBehaviour
             // Vector2 moveinput = new Vector2(Input.GetAxis("Horizontal"), 0);
 
 
-            if (rb.position.x <= -6.3f && moveinput.x <= 0)
+            if (rb.position.x <= -23.3f && moveinput.x <= 0)
         {
             moveinput.x = 0;
         }
 
-        if (rb.position.x >= 5.88f && moveinput.x >= 0)
+        if (rb.position.x >= 25.88f && moveinput.x >= 0)
         {
             moveinput.x = 0;
         }

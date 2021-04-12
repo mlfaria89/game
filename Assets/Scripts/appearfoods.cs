@@ -26,19 +26,19 @@ public class appearfoods : MonoBehaviour
         if (i == 1)
         {
             GameObject a = Instantiate(bearprefab) as GameObject;
-            a.transform.position = new Vector2(Random.Range(-4.35f, 4.36f), 10f);
+            a.transform.position = new Vector2(Random.Range(-10.35f, 10.36f), 10f);
         }
 
         if (i == 2)
         {
             GameObject b = Instantiate(sausageprefab) as GameObject;
-            b.transform.position = new Vector2(Random.Range(-4.35f, 4.36f), 10f);
+            b.transform.position = new Vector2(Random.Range(-10.35f,10.36f), 10f);
         }
 
         if (i == 3)
         {
             GameObject c = Instantiate(pretzelprefab) as GameObject;
-            c.transform.position = new Vector2(Random.Range(-4.35f, 4.36f), 10f);
+            c.transform.position = new Vector2(Random.Range(-10.35f, 10.36f), 10f);
         }
 
         

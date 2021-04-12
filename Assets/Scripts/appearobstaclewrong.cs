@@ -10,16 +10,18 @@ public class appearobstaclewrong : MonoBehaviour
     public float respawntime = 3.0f;
     
 
-    int index1 = 0;
-    int index2 = 0;
+   
     public static bool isright = false;
 
     // Start is called before the first frame update
     void Start()
     {
-      
-        StartCoroutine(obstaclewave());
         
+        obstacleprefab.GetComponent<Rigidbody2D>().gravityScale = selectlevel.level;
+        StartCoroutine(obstaclewave());
+        GameObject hightext = GameObject.Find("Main Camera/Canvas/Hightext");
+        Text myhightext = hightext.GetComponent<Text>();
+        myhightext.text = PlayerPrefs.GetInt("high", 0).ToString();
     }
 
     private void spawnobst()
@@ -37,7 +39,7 @@ public class appearobstaclewrong : MonoBehaviour
         GameObject a = Instantiate(obstacleprefab) as GameObject;
         
 
-        a.transform.position = new Vector2(Random.Range(-4.35f, 4.36f), 10f);
+        a.transform.position = new Vector2(Random.Range(-12.35f, 12.36f), 10f);
         
     }
     // Update is called once per frame
@@ -50,45 +52,41 @@ public class appearobstaclewrong : MonoBehaviour
     IEnumerator obstaclewave()
     {
         
-        respawntime = 3.0f;
+        respawntime = 3.0f ;
         while (collisioneffect.playerhealth >= 1)
         {
             // object is wrong by deafault
             isright = false;
-            // 4 rounds of the word on top and the other words random
-            index1 = Random.Range(0, 3);
-            // j is numer of times objects are created within the same word in english
+            // 4 rounds 
+            
+            // j is numer of times objects 
             int j = 4;
             for (int i = 1; i <= j; i++)
             {
                 
-                index2 = Random.Range(0, 3);
+                
                 // calculate probability of being righ and assign
                 // variable to calculate prob
                 int prob = Random.Range (1, 11);
-                // 30% chance of beeing equal
-                if (prob >= 8)
+                // 50% chance of beeing right
+                if (prob >= 6)
                 {
-                    index2 = index1;
+                    isright = true;
                 }
                 // if it is last for loop must be equal
-                if (i == j)
+                else
                 {
-                    index2 = index1;
+                    isright = false;
                 }
                 // wait and make object
                 
                 spawnobst();
                 // check if indexes are equal to see if object is right
-                if (index2 == index1)
-                {
-                    isright = true;
-                    
-                }
+                
                 //must wait after so there is time for the isright to be true
                 yield return new WaitForSeconds(respawntime);
                 // break must be after the wait
-                if (index1 == index2)
+                if (isright)
                 {
                     break;
 
