@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 2dc3aa063eabeeb42aee7aa085b8e5f7
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - shatter: {fileID: 137314, guid: 3289f1cfdb00e334391a5e2b437e4596, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

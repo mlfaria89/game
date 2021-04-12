@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 0910195f5c70c1a45abeb6a1eb6f5877
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - bearprefab: {fileID: 1073976968591539064, guid: 09d0f84b9bf6fb643a2e858c59ba265b,
+      type: 3}
+  - sausageprefab: {fileID: 1123786394627585293, guid: 9ad092eddf7bb7f4587cfff09a0cb9f2,
+      type: 3}
+  - pretzelprefab: {fileID: 6274849362363415639, guid: bffcd30f1e4d3f24e85f934a87b16076,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
